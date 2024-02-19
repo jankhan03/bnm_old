@@ -1,0 +1,71 @@
+Bot in work....
+Bot in work....
+Traceback (most recent call last):
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 445, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/http/client.py", line 1371, in getresponse
+    response.begin()
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/util/retry.py", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 447, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/urllib3/connectionpool.py", line 336, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yan4ik_car/Downloads/training_bot-main/main.py", line 181, in <module>
+    bot.polling(none_stop=True, interval=0)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/__init__.py", line 618, in polling
+    self.__threaded_polling(non_stop, interval, timeout, long_polling_timeout, allowed_updates)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/__init__.py", line 680, in __threaded_polling
+    raise e
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/__init__.py", line 639, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/util.py", line 107, in raise_exceptions
+    raise self.exception_info
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/util.py", line 89, in run
+    task(*args, **kwargs)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/__init__.py", line 359, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1), 
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/__init__.py", line 337, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates, long_polling_timeout)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/apihelper.py", line 322, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/telebot/apihelper.py", line 146, in _make_request
+    result = _get_req_session().request(
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/yan4ik_car/opt/anaconda3/lib/python3.9/site-packages/requests/adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
